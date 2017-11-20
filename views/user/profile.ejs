@@ -1,0 +1,47 @@
+<!-- FALTA LOCALIZACION Y PRODUCTOS -->
+
+<div class="container">
+<h3 class=" fa fa-user center-align teal-text"> PROFILE</h3><br>
+<ul class="collection">
+  <li class="collection-item avatar">
+    <img src="<%= user.pic_path%>" alt="" class="circle">
+    </li>
+  <li class="collection-item avatar">
+    <p>Email: <br>
+       <%= user.email %>
+    </p>
+  </li>
+  <li class="collection-item avatar">
+    <p>Nombre de usuario:<br>
+       <%= user.username %>
+    </p>
+  </li>
+</div>
+</ul>
+<br>
+<h5 class="teal-text center-align">Reviews:</h5>
+<div class="container">
+    <ul class="collection">
+    <% reviews.forEach((review) => { %>
+      <li class="collection-item avatar">
+        <p>Autor: <%= review.senderName %> </p>
+        <p>Comentario: <%= review.description %></p>
+        <p>Puntuación: <%= review.rating %></p>
+      </li>
+      <% }) %>
+        </ul>
+  </div>
+  <div class="container">
+    <p>PRODUCTS</p>
+
+  </div>
+ </div>
+ <div class="container">
+   <p>Location:</p>
+ </div>
+ <div class="container">
+   <div class="center-btn">
+     <a href="../../user/<%= user._id %>/editUser" class="btn btn-success"><span class="fa fa-sign-in"></span>EDITAR MI USUARIO</a><br></br>
+</div>
+</div>
+</div>

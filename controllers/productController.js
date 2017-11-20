@@ -1,6 +1,16 @@
 const Product = require('../models/Product');
 const TYPES    = require('../models/Product-types');
 
+module.exports = {
+  index: (req, res, next) => {
+    Product.find({}, (err, product) => {
+      res.render('products/indexcategories', {
+        products: product,
+        user: res.locals.user
+      });
+    });
+  },
+
 createGet: (req, res, next) => {
     res.render('product/create');
   },
@@ -54,4 +64,5 @@ createPost: (req, res, next) => {
       }
       res.redirect(`/product/${result._id}/`);
     });
-  },
+  }
+}

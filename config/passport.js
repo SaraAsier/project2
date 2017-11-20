@@ -60,8 +60,8 @@ module.exports = function (){
   }));
 
   passport.use(new FbStrategy({
-    clientID: "486848658326786",
-    clientSecret: "d0c3c8bcdf809f2cf6fc72bf800c41b6",
+    clientID: "961421200673348",
+    clientSecret: "0c6020835556ac533b32acce12075693",
     callbackURL: "/auth/facebook/callback",
   }, (accessToken, refreshToken, profile, done) => {
     User.findOne({ username: profile._json.name }, (err, user) => {

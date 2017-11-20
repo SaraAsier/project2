@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
-const TYPES    = require('./product-types');
+const TYPES    = require('./Product-types');
 
 const ProductSchema = new Schema({
   name : { type: String, required: true },

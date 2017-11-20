@@ -1,5 +1,5 @@
 const Review = require('../models/Review');
-const Poduct = require('../models/Poduct');
+const Product = require('../models/Product');
 
 module.exports = {
   createGet: (req, res, next) => {
@@ -9,7 +9,7 @@ module.exports = {
     });
   },
   createPost: (req, res, next) => {
-    Poduct.find({_id: req.params.id}, (err, product) => {
+    Product.find({_id: req.params.id}, (err, product) => {
       if (err) {
         console.log(err);
       }

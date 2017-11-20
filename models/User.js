@@ -9,11 +9,11 @@ const userSchema = new Schema({
   },
   name: {
     type: String,
-    required: true
+    required: false
   },
   lastName: {
     type: String,
-    required: true
+    required: false
   },
   password: {
     type: String,
@@ -31,7 +31,7 @@ const userSchema = new Schema({
   },
   image: {
     type: String,
-    required: true
+    required: false
   },
   trustLevel: {
     type: Number,

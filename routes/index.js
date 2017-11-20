@@ -1,9 +1,17 @@
-const express = require('express');
-const router  = express.Router();
+const router = require('express').Router();
+const indexController = require('../controllers/indexController');
+const auth = require('./auth');
+const user = require('./user');
+const product = require('./product');
+const message = require('./message');
+const review = require('./review');
 
-/* GET home page. */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+router.get('/', indexController.index);
+
+router.use('/auth', auth);
+router.use('/user', user);
+router.use('/product', product);
+router.use('/message', message);
+router.use('/review', review);
 
 module.exports = router;

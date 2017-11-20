@@ -1,0 +1,33 @@
+<div class="container">
+
+  <h5 class="center-align"><%= product.description %></h5>
+
+
+  <form action="/product/<%= product._id %>/update" method="POST">
+    <label for="name">Título</label>
+    <input type="text" id="title" name="name" value="<%= product.name %>">
+
+    <label for="price">¿Por cuanto?</label>
+    <input type="number" name="price" id="price" value="<%= product.price %>" placeholder="<%= product.price %>">
+
+    <label for="price">Ciudad</label>
+    <input type="text" name="city" id="city" value="<%= product.city %>" placeholder="<%= product.city %>">
+
+    <label for="description">Descripción</label>
+    <textarea type="text" name="description" id="description" value="<%= product.description %>"><%= product.description %></textarea>
+
+    <div class="center-btn">
+      <button class="btn waves-effect waves-light" type="submit" name="action">ACTUALIZAR
+        <i class="material-icons right">send</i></button>
+        <br></br>
+      </div>
+
+<br></br>
+  </form>
+  <div class="center-btn">
+    <a href="/product" class="btn btn-success"><span class="fa fa-sign-in"></span>CAMPAÑAS</a>
+    <br></br>
+    <a href="/product/<%= product._id %>/delete" class="btn btn-default"><span class="fa fa-user"></span>ELIMINAR</a>
+  </div>
+<br></br>
+</div>

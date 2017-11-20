@@ -1,0 +1,30 @@
+<div class="container">
+<form id="form" action="/product/create" method="POST" enctype="multipart/form-data">
+  <input  id="lat" name="lat" placeholder="Latitude" style="visibility:hidden">
+  <input  id="lon" name="log" placeholder="Longitude" style="visibility:hidden">
+  <label>Nombre</label><br>
+  <input type="text" name="name" placeholder="Nombre">
+  <br><br>
+  <label>Descripción</label><br>
+  <input type="text" name="description" placeholder="Descripción">
+  <br><br>
+  <label>Categoría</label><br>
+  <input type="text" name="category" placeholder="Categoría">
+  <br><br>
+  <label>Municipio</label><br>
+  <input type="text" name="city" placeholder="Municipio">
+  <br><br>
+  <div class="container">
+  <div class="center-btn right">
+    <button class="btn waves-effect waves-light" type="submit" name="action">CREAR PRODUCTO
+   <i class="material-icons right">send</i></button>
+   <br>
+  </div>
+</div>
+  <br></br>
+</form>
+<input id="pac-input" class="controls" type="text"
+    placeholder="Enter a location">
+<div id="map"></div>
+<br></br>
+</div>

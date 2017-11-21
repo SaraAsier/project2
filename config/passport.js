@@ -59,23 +59,33 @@ module.exports = function (){
     });
   }));
 
+
   passport.use(new FbStrategy({
-    clientID: "961421200673348",
-    clientSecret: "0c6020835556ac533b32acce12075693",
-    callbackURL: "/auth/facebook/callback",
-  }, (accessToken, refreshToken, profile, done) => {
-    User.findOne({ username: profile._json.name }, (err, user) => {
-    if (err) { return done(err); }
-    if (user === null){
-      const newUser = new User({
-        username: profile._json.name,
-        facebookID: profile._json.id
-      });
-      newUser.save((err) => {
-        if (err) {return done(err);}
-        return done(null, newUser);
-      });
-    } else { done(null, user); }
-    });
-  }));
-};
+  clientID: "353686395102350",
+  clientSecret: "58f14ff11f7626d790f16fe941b63284",
+  callbackURL: "/auth/facebook/callback"
+}, (accessToken, refreshToken, profile, done) => {
+
+  User.findOne({ facebookID: profile.id }, (err, user) => {
+     if (err) {
+       return done(err);
+     }
+     if (user) {
+       return done(null, user);
+     }
+
+     const newUser = new User({
+       facebookID: profile.id
+     });
+
+     newUser.save((err) => {
+       if (err) {
+         return done(err);
+       }
+       done(null, newUser);
+     });
+   });
+
+ }));
+
+ };

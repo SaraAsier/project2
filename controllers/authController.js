@@ -1,5 +1,7 @@
 const User = require("../models/User");
 const passport = require("passport");
+const multer  = require('multer');
+const upload = multer({ dest: './public/uploads/' });
 
 module.exports = {
   signupGet: (req, res, next) => { res.render('auth/signup'); },
@@ -16,9 +18,9 @@ module.exports = {
 
   logout: (req, res, next) => { req.logout(); res.redirect('/../'); },
 
-  facebookGet: passport.authenticate("facebook"),
-  facebookCallbackGet: passport.authenticate("facebook", {
-    successRedirect: "/product",
-    failureRedirect: "/"
-  })
+  // facebookGet: passport.authenticate("facebook"),
+  // facebookCallbackGet: passport.authenticate("facebook", {
+  //   successRedirect: "/product",
+  //   failureRedirect: "/"
+  // })
 };

@@ -1,3 +1,22 @@
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '353686395102350',
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <div class="container">
 <div class="row">
   <h2 class="center-align teal-text">Log In</h2>
@@ -23,8 +42,12 @@
     </div>
     <br><br>
 
+    <div class="">
+<div class="fb-login-button" data-width="130" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
       </div>
     </div>
+
+    <a href="/auth/facebook">Login With Facebook</a>
   </form>
 </div>
 <div>

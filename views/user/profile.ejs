@@ -16,18 +16,36 @@
        <%= user.username %>
     </p>
   </li>
-</div>
+  <li class="collection-item avatar">
+    <p>Name:<br>
+       <%= user.name %>
+    </p>
+  </li>
+  <li class="collection-item avatar">
+    <p>Last Name:<br>
+       <%= user.lastname %>
+    </p>
+  </li>
+  <li class="collection-item avatar">
+    <p>Trust level:<br>
+       <%= user.trustLevel %>
+    </p>
+  </li>
 </ul>
-<br>
-<h5 class="teal-text center-align">Reviews:</h5>
-
  </div>
  <div class="container">
    <p>Location:</p>
+   <div id="map"></div>
+   <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+   <input id="latitude" name="latitude" type="text">
+   <input id="longitude" name="longitude" type="text">
  </div>
+ <br>
+ <h5 class="teal-text center-align">Reviews:</h5>
  <div class="container">
    <div class="center-btn">
      <a href="../../user/<%= user._id %>/editUser" class="btn btn-success"><span class="fa fa-sign-in"></span>EDITAR MI USUARIO</a><br></br>
 </div>
 </div>
-</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApXzFjm59CO5m3ox-cr3w3AiiVnsBHzfQ&libraries=places"></script>
+<script type="text/javascript" src="/javascripts/mapDrawAll.js"></script>

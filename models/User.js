@@ -23,12 +23,10 @@ const userSchema = new Schema({
     type: String,
     required: false
   },
-  location: {
-    type: {
-      type: String
-    },
-    coordinates: [Number]
-  },
+
+  latitude: Number,
+  longitude: Number,
+
   image: {
     type: String,
     required: false
@@ -45,8 +43,8 @@ const userSchema = new Schema({
   }
 });
 
-// userSchema.index({
-//   location: '2dsphere'
-// });
+userSchema.index({
+  location: '2dsphere'
+});
 
 module.exports = mongoose.model('User', userSchema);

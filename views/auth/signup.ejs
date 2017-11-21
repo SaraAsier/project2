@@ -18,6 +18,8 @@
         <input id="username" type="text" class="validate" name="username" placeholder="Username">
       </div>
     </div>
+
+
     <div class="row">
       <div class="input-field col s12">
         <input id="email" type="email" class="validate" name="email" placeholder="Email">
@@ -30,6 +32,12 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+      </div>
+    </div>
+
     <div class="file-field input-field">
           <div class="btn">
             <span>Select a file</span>
@@ -39,7 +47,9 @@
             <input type="text">
           </div>
         </div>
-
+        <br>
+    <div id="map"></div>
+    <br>
     <div class="center-btn">
       <button class="btn waves-effect waves-light right" type="submit" name="action" value="Submit">Submit
         <i class="material-icons right">send</i>
@@ -47,6 +57,11 @@
       <br></br>
     </div>
 
+    <input id="latitude" name="latitude" type="text">
+    <input id="longitude" name="longitude" type="text">
   </form>
 </div>
+
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApXzFjm59CO5m3ox-cr3w3AiiVnsBHzfQ&libraries=places"></script>
+<script type="text/javascript" src="/javascripts/mapDrawAll.js"></script>

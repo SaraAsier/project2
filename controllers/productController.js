@@ -11,6 +11,17 @@ module.exports = {
     });
   },
 
+categories: (req, res, next) => {
+  console.log(req.params.category);
+    Product.find({category: req.params.category}, (err, product) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log(product);
+      res.render('products/productbycategory');
+    });
+  },
+
 createGet: (req, res, next) => {
     res.render('product/create');
   },

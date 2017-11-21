@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 const TYPES    = require('./Product-types');
 
-const ProductSchema = new Schema({
-  name : { type: String, required: true },
-  description : { type: String, required: true },
-  category : { type: String, enum: TYPES, required: true },
-  creator : { type: Schema.Types.ObjectId, ref: 'User', required: true },
-  isAvaliable : Boolean,
+const productSchema = new Schema({
+  name : { type: String },
+  description : { type: String},
+  category : { type: String, enum: TYPES},
+  creator : { type: Schema.Types.ObjectId, ref: 'User' },
+  isAvailable : Boolean,
   photo: String
 }, {
   timestamps: {
@@ -16,4 +16,4 @@ const ProductSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Product', ProductSchema);
+module.exports = mongoose.model('Product', productSchema);

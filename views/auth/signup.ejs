@@ -1,19 +1,23 @@
 <div class="container">
 <div class="row">
-  <h2 class="center-align teal-text">Regístrate</h2>
+  <h2 class="center-align teal-text">Join</h2>
   <form class="col s12" action="/auth/signup" method="post">
 
     <div class="row">
       <div class="input-field col s12">
-        <input id="name" type="text" class="validate" name="name" placeholder="Nonmbre">
+        <input id="name" type="text" class="validate" name="name" placeholder="Name">
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="last_name" type="text" class="validate" name="username" placeholder="Name & Last Name">
+        <input id="lastName" type="text" class="validate" name="lastName" placeholder="Lastname">
       </div>
     </div>
-
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="username" type="text" class="validate" name="username" placeholder="Username">
+      </div>
+    </div>
     <div class="row">
       <div class="input-field col s12">
         <input id="email" type="email" class="validate" name="email" placeholder="Email">
@@ -26,8 +30,18 @@
       </div>
     </div>
 
+    <div class="file-field input-field">
+          <div class="btn">
+            <span>Select a file</span>
+            <input id="image" name="image" type="file" class="file-loading" required>
+          </div>
+          <div class="file-path-wrapper">
+            <input type="text">
+          </div>
+        </div>
+
     <div class="center-btn">
-      <button class="btn waves-effect waves-light right" type="submit" name="action" value="Submit">REGISTRARME
+      <button class="btn waves-effect waves-light right" type="submit" name="action" value="Submit">Submit
         <i class="material-icons right">send</i>
       </button>
       <br></br>

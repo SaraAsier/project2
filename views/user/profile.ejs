@@ -1,10 +1,10 @@
 <!-- FALTA LOCALIZACION Y PRODUCTOS -->
 
 <div class="container">
-<h3 class=" fa fa-user center-align teal-text"> PROFILE</h3><br>
+<h3 class=" fa fa-user center-align teal-text"> My profile</h3><br>
 <ul class="collection">
   <li class="collection-item avatar">
-    <img src="<%= user.pic_path%>" alt="" class="circle">
+    <img src="<%= user.image%>" width="50px" height="50px">
     </li>
   <li class="collection-item avatar">
     <p>Email: <br>
@@ -12,7 +12,7 @@
     </p>
   </li>
   <li class="collection-item avatar">
-    <p>Nombre de usuario:<br>
+    <p>Username:<br>
        <%= user.username %>
     </p>
   </li>
@@ -25,14 +25,14 @@
     <% reviews.forEach((review) => { %>
       <li class="collection-item avatar">
         <p>Autor: <%= review.senderName %> </p>
-        <p>Comentario: <%= review.description %></p>
-        <p>Puntuación: <%= review.rating %></p>
+        <p>Comment: <%= review.description %></p>
+        <p>Rating: <%= review.rating %></p>
       </li>
       <% }) %>
         </ul>
   </div>
   <div class="container">
-    <p>PRODUCTS</p>
+    <p>Offered goods:</p>
 
   </div>
  </div>

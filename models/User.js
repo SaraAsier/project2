@@ -5,7 +5,7 @@ const userSchema = new Schema({
   facebookId: String,
   username: {
     type: String,
-    required: true
+    required: false
   },
   name: {
     type: String,
@@ -17,11 +17,11 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required: true
+    required: false
   },
   email: {
     type: String,
-    required: true
+    required: false
   },
   location: {
     type: {

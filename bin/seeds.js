@@ -43,7 +43,7 @@ User.create(users, (err, docs) => {
   }
 
   docs.forEach((cel) => {
-    console.log(cel.title)
+    console.log(cel.name)
   });
 
   mongoose.connection.close();

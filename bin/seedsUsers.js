@@ -34,17 +34,18 @@ const users = [
   }
   ];
 
+  User.create(users, (err, docs) => {
+    if (err) {
+      throw err;
+    };
+    docs.forEach((cel) => {
+      console.log(cel.name);
+      console.log(cel.id);
 
-User.collection.drop();
 
-User.create(users, (err, docs) => {
-  if (err) {
-    throw err;
-  }
+    });
+      });
 
-  docs.forEach((cel) => {
-    console.log(cel.name)
-  });
 
-  mongoose.connection.close();
-});
+
+mongoose.connection.close();

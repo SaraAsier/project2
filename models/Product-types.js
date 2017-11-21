@@ -1,11 +1,11 @@
 module.exports = [
-  "Cultura",
-  "Electrónica",
-  "Deporte y Ocio",
-  "Hogar",
-  "Moda y Accesorios",
-  "Motor",
-  "Niños y Bebes",
-  "Servicios",
-  "Otros"
+  "Entertainment",
+  "Technology",
+  "Sports",
+  "Home",
+  "Clothes",
+  "Vehicles",
+  "Children",
+  "Services",
+  "Others"
 ];

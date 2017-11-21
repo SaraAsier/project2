@@ -12,13 +12,19 @@ module.exports = {
   },
 
 categories: (req, res, next) => {
-  console.log(req.params.category);
-    Product.find({category: req.params.category}, (err, product) => {
+  var str =req.params.category;
+  var str2 = str.split('');
+  var str3 = str2[0].toUpperCase() + str.substr(1);
+  console.log(str3);
+    Product.find({category: str3}, (err, product) => {
       if (err) {
         console.log(err);
       }
       console.log(product);
-      res.render('products/productbycategory');
+      res.render('products/productbycategory', {
+        category: str3,
+        product: product
+      });
     });
   },
 
@@ -67,8 +73,8 @@ createPost: (req, res, next) => {
   },
 
   editPost: (req, res, next) => {
-    const { name, description, category, isAvaliable, photo } = req.body;
-    const updates = { name, description, category, isAvaliable, photo };
+    const { name, description, category, isAvailable, photo } = req.body;
+    const updates = { name, description, category, isAvailable, photo };
     Product.findByIdAndUpdate(req.params.id, updates, (err, result) => {
       if (err) {
         console.log(err);
@@ -76,4 +82,4 @@ createPost: (req, res, next) => {
       res.redirect(`/product/${result._id}/`);
     });
   }
-}
+};

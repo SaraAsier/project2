@@ -11,24 +11,24 @@ mongoose.connect("mongodb://localhost/project2");
 
   const products = [
     {
-    name: "Taladro",
-    description:"Taladro inalámbrico de 20V",
+    name: "Drill",
+    description:"Wireless drill,  20V",
     category: "Home",
     creator: "5a140a0bbf1ca743488bef90",
     isAvailable: true,
     photo: "http://laanonima.s3-website-us-east-1.amazonaws.com/web/images/productos/b/0000001000/1770.jpg",
     },
     {
-    name: "Cuna",
-    description:"Cuna con colchón",
+    name: "Cradle",
+    description:"Cradle with mattress",
     category: "Children",
     creator: "5a140a0bbf1ca743488bef90",
     isAvailable: true,
     photo: "https://madreshoy.com/wp-content/uploads/2009/11/cuna_madera.jpg",
     },
     {
-    name: "Tienda de campaña",
-    description:"Tienda para dos tipo tipi",
+    name: "Camp tent",
+    description:"Tipi tent for two people",
     category: "Sports",
     creator: "5a140a0bbf1ca743488bef91",
     isAvailable: true,
@@ -36,7 +36,7 @@ mongoose.connect("mongodb://localhost/project2");
     },
     {
     name: "Aprendiendo JavaScript",
-    description:"Autor: Carlos Azaustre",
+    description:"Author: Carlos Azaustre",
     category: "Entertainment",
     creator: "5a140a0bbf1ca743488bef91",
     isAvailable: true,

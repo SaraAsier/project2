@@ -18,8 +18,7 @@ const users = [
   lastName: "Mozaffary",
    password: encryptedPass,
   email: "sara@hola.com",
-  // location: [40.392584, -3.698190],
-  image: "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2016/05/25/103666044-RTX2AQXH.530x298.jpg?v=1464205218",
+    image: "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2016/05/25/103666044-RTX2AQXH.530x298.jpg?v=1464205218",
   trustLevel: 2,
   },
   {
@@ -28,7 +27,6 @@ const users = [
   lastName: "Cisneros",
    password: encryptedPass,
   email: "asier@hola.com",
-  // location: [40.397397, -3.702943],
   image: "http://www.comedycentral.es/wp-content/uploads/sites/4/2016/03/bocasecaman.png",
   trustLevel: 2,
   }

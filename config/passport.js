@@ -30,9 +30,9 @@ module.exports = function (){
               if (err){ return next(err); }
               if (user) { return next(null, false); }
               else {
-                  const {  username, email, image, password, name, lastName } = req.body;
+                  const {  name, lastName, username, email, image, latitude, longitude, password } = req.body;
                   const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-                  const newUser = new User({name, username, email, image, lastName, password: hashPass});
+                  const newUser = new User({name, lastName, username, email, image, latitude, longitude, password: hashPass});
 
                   newUser.save((err) => {
                       if (err){ next(err); }

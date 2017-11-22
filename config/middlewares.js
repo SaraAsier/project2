@@ -22,4 +22,4 @@ const upload = multer({ dest: './public/uploads/' });
 module.exports = {
   EnsureLoggedIn: ensureLoggedIn('../../auth/login'),
   UploadFile: upload.single('photo')
-  };
+};

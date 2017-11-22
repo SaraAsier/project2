@@ -1,5 +1,5 @@
 const Product = require('../models/Product');
-const TYPES    = require('../models/Product-types');
+const TYPES = require('../models/Product-types');
 
 module.exports = {
   index: (req, res, next) => {
@@ -11,12 +11,14 @@ module.exports = {
     });
   },
 
-categories: (req, res, next) => {
-  var str =req.params.category;
-  var str2 = str.split('');
-  var str3 = str2[0].toUpperCase() + str.substr(1);
-  console.log(str3);
-    Product.find({category: str3}, (err, product) => {
+  categories: (req, res, next) => {
+    var str = req.params.category;
+    var str2 = str.split('');
+    var str3 = str2[0].toUpperCase() + str.substr(1);
+    console.log(str3);
+    Product.find({
+      category: str3
+    }, (err, product) => {
       if (err) {
         console.log(err);
       }
@@ -28,11 +30,11 @@ categories: (req, res, next) => {
     });
   },
 
-createGet: (req, res, next) => {
+  createGet: (req, res, next) => {
     res.render('product/create');
   },
 
-createPost: (req, res, next) => {
+  createPost: (req, res, next) => {
     const newProduct = new Product({
       name: req.body.title,
       description: req.body.description,
@@ -73,8 +75,20 @@ createPost: (req, res, next) => {
   },
 
   editPost: (req, res, next) => {
-    const { name, description, category, isAvailable, photo } = req.body;
-    const updates = { name, description, category, isAvailable, photo };
+    const {
+      name,
+      description,
+      category,
+      isAvailable,
+      photo
+    } = req.body;
+    const updates = {
+      name,
+      description,
+      category,
+      isAvailable,
+      photo
+    };
     Product.findByIdAndUpdate(req.params.id, updates, (err, result) => {
       if (err) {
         console.log(err);

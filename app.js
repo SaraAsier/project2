@@ -1,5 +1,5 @@
+require('dotenv').config();
 const app = require('express')();
-require('dotenv').load();
 require('./config/passport')();
 require('./config/express')(app);
 require('./config/expresscontroller')(app);

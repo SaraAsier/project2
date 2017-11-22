@@ -2,7 +2,6 @@
 const User = require('../models/User');
 const Review = require('../models/Review');
 
-//
 module.exports = {
   profileGet: (req, res, next) => {
     Review.find({receiverId: res.locals.user._id}, (err, reviews) => {

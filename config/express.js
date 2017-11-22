@@ -7,11 +7,15 @@ const logger = require('morgan');
 const path = require('path');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const config = require('./config');
 const expressLayouts = require("express-ejs-layouts");
 
 module.exports = function(app){
-  mongoose.connect(config.db);
+
+  mongoose.connect(process.env.DB_URL).then(() =>{
+    console.log("Connected to DB: " + process.env.DB_URL);
+  });
+
+
   app.set('views', config.rootPath+'views');
   app.set("view engine", "ejs");
   app.set('layout', 'layout/main-layout');

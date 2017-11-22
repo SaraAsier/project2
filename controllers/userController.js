@@ -1,16 +1,17 @@
 
 const User = require('../models/User');
 const Review = require('../models/Review');
+const Product = require('../models/Product');
 
 //
 module.exports = {
   profileGet: (req, res, next) => {
-    Review.find({receiverId: res.locals.user._id}, (err, reviews) => {
-
-      console.log(reviews);
+    Product.find({creator: res.locals.user._id}, (err, product) => {
+      console.log(product);
       res.render('user/profile', {
         user: res.locals.user,
-        reviews: reviews
+        products: product,
+        reviews: review
       });    });
   },
 

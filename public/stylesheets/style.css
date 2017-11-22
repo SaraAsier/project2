@@ -6,6 +6,16 @@ nav .brand-logo {
 p {
   line-height: 2rem;
 }
+.uploadPhoto{
+  content: "Select a picture";
+  background-color: Gold;
+}
+
+.profilePicture{
+  width: 100px;
+  height: 100px;
+  
+}
 
 .button-collapse {
   color: #95c11f;

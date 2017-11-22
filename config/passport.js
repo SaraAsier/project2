@@ -23,6 +23,7 @@ module.exports = function (){
   passport.use('local-signup', new LocalStrategy(
     { passReqToCallback: true },
     (req, username, password, next) => {
+      console.log(req.file);
       process.nextTick(() => {
           User.findOne({
               'username': username
@@ -30,9 +31,9 @@ module.exports = function (){
               if (err){ return next(err); }
               if (user) { return next(null, false); }
               else {
-                  const {  name, lastName, username, email, image, latitude, longitude, password } = req.body;
+                  const {  name, lastName, username, email, latitude, longitude, password } = req.body;
                   const hashPass = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-                  const newUser = new User({name, lastName, username, email, image, latitude, longitude, password: hashPass});
+                  const newUser = new User({name, lastName, username, email, latitude, longitude, password: hashPass, pic_path: `/uploads/${req.file.filename}`, pic_name: req.file.originalname});
 
                   newUser.save((err) => {
                       if (err){ next(err); }

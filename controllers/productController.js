@@ -3,12 +3,9 @@ const TYPES = require('../models/Product-types');
 
 module.exports = {
   index: (req, res, next) => {
-    Product.find({}, (err, product) => {
-      res.render('products/indexcategories', {
-        products: product,
-        user: res.locals.user
-      });
-    });
+    Product.find()
+      .then(product => res.render('products/indexcategories', {products: product, user: res.locals.user}))
+      .catch( err => console.log (err));
   },
 
   categories: (req, res, next) => {
@@ -16,18 +13,13 @@ module.exports = {
     var str2 = str.split('');
     var str3 = str2[0].toUpperCase() + str.substr(1);
     console.log(str3);
-    Product.find({
-      category: str3
-    }, (err, product) => {
-      if (err) {
-        console.log(err);
-      }
-      console.log(product);
-      res.render('products/productbycategory', {
-        category: str3,
-        product: product
-      });
-    });
+    Product.find({category: str3})
+      .populate('creator')
+      .then(product => {
+        console.log(product);
+      res.render('products/productbycategory', {category: str3, product: product});
+    })
+      .catch(err => console.log(err));
   },
 
   createGet: (req, res, next) => {
@@ -43,35 +35,21 @@ module.exports = {
       isAvaliable: false,
       photo: `../uploads/${req.file.filename}`
     });
-    newProduct.save((err) => {
-      if (err) {
-        return err;
-      } else {
-        return res.redirect("/product");
-      }
-    });
+    newProduct.save()
+      .then(() => res.redirect("/product"))
+      .catch(err => res.redirect("/product/create"));
   },
 
-
   delete: (req, res, next) => {
-    Product.findByIdAndRemove(req.params.id, (err, obj) => {
-      if (err) {
-        return next(err);
-      }
-      res.redirect("/product");
-    });
+    Product.findByIdAndRemove(req.params.id)
+      .then(obj => res.redirect("/product"))
+      .catch(err => console.log(err));
   },
 
   editGet: (req, res, next) => {
-    Product.findById(req.params.id, (err, product) => {
-      if (err) {
-        console.log(err);
-      }
-      res.render('product/update', {
-        name: 'El taladro de Juanito',
-        product: product
-      });
-    });
+    Product.findById(req.params.id)
+    .then(product => res.render('product/update', { name: 'El taladro de Juanito', product: product }))
+    .catch(err => console.log(err));
   },
 
   editPost: (req, res, next) => {
@@ -89,11 +67,8 @@ module.exports = {
       isAvailable,
       photo
     };
-    Product.findByIdAndUpdate(req.params.id, updates, (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-      res.redirect(`/product/${result._id}/`);
-    });
-  }
+    Product.findByIdAndUpdate(req.params.id, updates)
+      .then(result => res.redirect(`/product/${result._id}/`))
+      .catch(err => console.log(err));
+}
 };

@@ -8,6 +8,8 @@ const path = require('path');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const expressLayouts = require("express-ejs-layouts");
+const rootPath = path.normalize(__dirname+'/../');
+
 
 module.exports = function(app){
 
@@ -16,7 +18,7 @@ module.exports = function(app){
   });
 
 
-  app.set('views', config.rootPath+'views');
+  app.set('views', rootPath+'views');
   app.set("view engine", "ejs");
   app.set('layout', 'layout/main-layout');
   app.use(expressLayouts);
@@ -24,7 +26,7 @@ module.exports = function(app){
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
-  app.use(express.static(config.rootPath+'public'));
+  app.use(express.static(rootPath+'public'));
   app.use('/vendor/jquery', express.static(path.join(__dirname, '../node_modules/jquery/dist')));
   app.use('/vendor/bootstrap', express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
   app.use(session({

@@ -4,24 +4,15 @@ const Review = require('../models/Review');
 
 module.exports = {
   profileGet: (req, res, next) => {
-    Review.find({receiverId: res.locals.user._id}, (err, reviews) => {
-
-      console.log(reviews);
-      res.render('user/profile', {
-        user: res.locals.user,
-        reviews: reviews
-      });    });
+    Review.find({receiverId: res.locals.user._id})
+      .then(reviews => res.render('user/profile', { user: res.locals.user, reviews: reviews }))
+      .catch(err => console.log(err));
   },
 
   editGet: (req, res, next) => {
-    User.findById(req.params.id, (err, user) => {
-      if (err) {
-        console.log(err);
-      }
-      res.render('user/editUser', {
-        user: user
-      });
-    });
+    User.findById(req.params.id)
+      .then(user => res.render('user/editUser', { user: user }))
+      .catch(err => console.log(err));
   },
 
   editPost: (req, res, next) => {
@@ -31,11 +22,8 @@ module.exports = {
       pic_path: `../uploads/${req.file.filename}`,
       pic_name: req.file.originalname
     };
-    User.findByIdAndUpdate(req.params.id, updates, (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-      res.redirect('/user/profile');
-    });
-  }
+    User.findByIdAndUpdate(req.params.id, updates)
+      .then(result => res.redirect('/user/profile'))
+      .catch(err => console.log(err));
+}
 };

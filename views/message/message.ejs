@@ -1,1 +1,14 @@
 <h1>My messages</h1>
+
+<ul>
+  <% message.forEach((message) => { %>
+  <li><h5>From: <%= message.from %></h5></li>
+  <li><p>Message: <%= message.text %></p></li>
+  <% }) %>
+</ul>
+
+<div class="container">
+  <div class="center-btn">
+    <a href="../../message/new" class="btn btn-success"><span class="fa fa-sign-in"></span>NEW MESSAGE</a><br></br>
+  </div>
+</div>

@@ -1,22 +1,22 @@
 <div class="container">
 <div class="row">
   <h2 class="center-align teal-text">New Message</h2>
-  <form class="col s12" action="/auth/signup" method="post">
-
+  <form class="col s12" action="/message/new" method="post">
     <div class="row">
       <div class="input-field col s12">
-        <input id="name" type="text" class="validate" name="name" placeholder="Name">
+        <input id="to" type="text" class="validate" name="to" placeholder="To:">
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="lastName" type="text" class="validate" name="lastName" placeholder="Lastname">
+        <textarea id="text" type="textarea" class="validate" name="text" placeholder="Message"></textarea>
       </div>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="username" type="text" class="validate" name="username" placeholder="Username">
-      </div>
+    <div class="center-btn">
+      <button class="btn waves-effect waves-light right" type="submit" name="action" value="Submit">Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <br></br>
     </div>
   </form>
 </div>

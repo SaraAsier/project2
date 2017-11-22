@@ -23,7 +23,7 @@ module.exports = {
   },
 
   createGet: (req, res, next) => {
-    res.render('product/create');
+    res.render('products/create');
   },
 
   createPost: (req, res, next) => {

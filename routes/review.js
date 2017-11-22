@@ -2,7 +2,6 @@ const router = require('express').Router();
 const ReviewController = require('../controllers/reviewController');
 const middle = require('../config/middlewares');
 
-router.get('/profile', middle.EnsureLoggedIn, ReviewController.profileGet);
 router.get('/:id/create', middle.EnsureLoggedIn, ReviewController.createGet);
 router.post('/:id/create', middle.EnsureLoggedIn, ReviewController.createPost);
 

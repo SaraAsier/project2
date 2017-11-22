@@ -4,7 +4,7 @@ const Schema   = mongoose.Schema;
 const MessageSchema = new Schema({
   from : { type: Schema.Types.ObjectId, ref: 'User', required: true },
   to : { type: Schema.Types.ObjectId, ref: 'User', required: true },
-  message : String
+  text : String
 }, {
   timestamps: {
     createdAt: 'created_at',

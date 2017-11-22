@@ -7,12 +7,18 @@ const logger = require('morgan');
 const path = require('path');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const config = require('./config');
 const expressLayouts = require("express-ejs-layouts");
+const rootPath = path.normalize(__dirname+'/../');
+
 
 module.exports = function(app){
-  mongoose.connect(config.db);
-  app.set('views', config.rootPath+'views');
+
+  mongoose.connect(process.env.DB_URL).then(() =>{
+    console.log("Connected to DB: " + process.env.DB_URL);
+  });
+
+
+  app.set('views', rootPath+'views');
   app.set("view engine", "ejs");
   app.set('layout', 'layout/main-layout');
   app.use(expressLayouts);
@@ -20,7 +26,7 @@ module.exports = function(app){
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
-  app.use(express.static(config.rootPath+'public'));
+  app.use(express.static(rootPath+'public'));
   app.use('/vendor/jquery', express.static(path.join(__dirname, '../node_modules/jquery/dist')));
   app.use('/vendor/bootstrap', express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
   app.use(session({

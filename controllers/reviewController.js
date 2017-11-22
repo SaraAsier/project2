@@ -6,16 +6,6 @@ const Product = require('../models/Product');
 
 module.exports = {
 
-  profileGet: (req, res, next) => {
-    Review.find({receiverId: res.locals.user._id}, (err, review) => {
-        console.log("CACHO");
-      console.log(review);
-      res.render('user/profile', {
-        user: res.locals.user,
-        reviews: review
-      });    });
-  },
-
   createGet: (req, res, next) => {
     res.render('reviews/create', {
       user: res.locals.user,

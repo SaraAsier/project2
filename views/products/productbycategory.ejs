@@ -4,6 +4,9 @@
 
 <ul>
   <% product.forEach((product) => { %>
-  <li><%= product.name %></li>
+  <li><h5><%= product.name %></h5></li>
+  <li>Product description: <%= product.description %>=</li>
+  <li>Is available: <%= product.isAvailable %></li>
+  <li><a href="/user/profile/<%= product.creator._id%>"><b><%= product.creator.username %></b></a></li>
   <% }) %>
 </ul>

@@ -1,4 +1,3 @@
-<!-- FALTA LOCALIZACION Y PRODUCTOS -->
 
 <div class="container">
   <h3 class=" fa fa-user center-align teal-text"> My profile</h3><br>
@@ -49,13 +48,43 @@
 </div>
 <br>
 <h5 class="teal-text center-align">Stuff I can share:</h5>
-
+<ul>
+  <% products.forEach((product) => { %>
+  <li>
+      <%= product.name %>
+    </li>
+    <li>
+        <%= product.description %>
+      </li>
+      <li>
+          <%= product.isAvailable %>
+        </li>
+        <li>
+            <img width="300px" src="<%= product.photo %>" alt="pic">
+          </li>
+    <% }) %>
+</ul>
 <h5 class="teal-text center-align">Reviews:</h5>
+<ul>
+  <% reviews.forEach((review) => { %>
+  <li>
+      <%= review.senderName %>
+    </li>
+    <li>
+        <%= review.description %>
+      </li>
+      <li>
+          <%= review.rating %>
+        </li>
+<% }) %>
+</ul>
+
 <div class="container">
   <div class="center-btn">
     <a href="../../user/<%= user._id %>/editUser" class="btn btn-success"><span class="fa fa-sign-in"></span>EDIT PROFILE</a><br></br>
   </div>
 </div>
+
 <script type="text/javascript">
 var myUser = <%- JSON.stringify(user) %>;
 </script>

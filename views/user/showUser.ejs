@@ -1,0 +1,56 @@
+<div class="container">
+  <h3 class=" fa fa-user center-align teal-text"> My profile</h3><br>
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <img class="profilePicture" src="<%= user.pic_path %>" alt="<%= user.pic_name %>">
+    </li>
+    <li class="collection-item avatar">
+      <p>Email: <br>
+        <%= user.email %>
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <p>Username:<br>
+        <%= user.username %>
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <p>Name:<br>
+        <%= user.name %>
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <p>Last Name:<br>
+        <%= user.lastname %>
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <p>Trust level:<br>
+        <%= user.trustLevel %>
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <p>Latitude:<br>
+        <%= user.latitude %>
+      </p>
+    </li>
+    <li class="collection-item avatar">
+      <p>Longitude:<br>
+        <%= user.longitude %>
+      </p>
+    </li>
+  </ul>
+</div>
+<div class="container">
+  <p>Location:</p>
+  <div id="map"></div>
+</div>
+<br>
+<h5 class="teal-text center-align">Stuff I can share:</h5>
+
+<h5 class="teal-text center-align">Reviews:</h5>
+<script type="text/javascript">
+var myUser = <%- JSON.stringify(user) %>;
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApXzFjm59CO5m3ox-cr3w3AiiVnsBHzfQ&libraries=places"></script>
+<script type="text/javascript" src="/javascripts/myMarker.js"></script>

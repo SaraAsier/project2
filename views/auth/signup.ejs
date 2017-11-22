@@ -1,8 +1,8 @@
 <div class="container">
-<div class="row">
-  <h2 class="center-align teal-text">Join</h2>
-  <form class="col s12" action="/auth/signup" method="post">
+<h2 class="center-align teal-text">Join</h2>
 
+  <form class="col s12" action="/auth/signup" method="post" enctype="multipart/form-data">
+      <input type="file" name="photo">
     <div class="row">
       <div class="input-field col s12">
         <input id="name" type="text" class="validate" name="name" placeholder="Name">
@@ -38,15 +38,7 @@
       </div>
     </div>
 
-    <div class="file-field input-field">
-          <div class="btn">
-            <span>Select a profile picture</span>
-            <input id="photo" name="photo" type="file" class="file-loading" required>
-          </div>
-          <div class="file-path-wrapper">
-            <input type="text">
-          </div>
-        </div>
+
         <br>
     <div id="map"></div>
     <br>

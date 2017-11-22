@@ -27,11 +27,10 @@ const userSchema = new Schema({
   latitude: Number,
   longitude: Number,
 
-  image: {
-    type: String,
+  pic_path: String,
+  pic_name: String,
 
-  },
-  trustLevel: {
+  trustLevel:{
     type: Number,
     min: 0,
     max: 5

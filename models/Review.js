@@ -4,7 +4,7 @@ const Schema   = mongoose.Schema;
 const reviewSchema = new Schema({
   senderId: String,
   senderName: String,
-  receiverId: String,
+  receiverId: { type: Schema.Types.ObjectId, ref: 'User' },
   description: {
     type: String,
     required: true

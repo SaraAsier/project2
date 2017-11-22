@@ -5,7 +5,7 @@ const upload = multer({ dest: './public/uploads/' });
 
 module.exports = {
   signupGet: (req, res, next) => { res.render('auth/signup'); },
-  signupPost: passport.authenticate('local-signup', {
+  signupPost:  passport.authenticate('local-signup', {
       successRedirect: '/product',
       failureRedirect: '/auth/signup'
   }),

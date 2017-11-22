@@ -1,7 +1,11 @@
+
+const User = require('../models/User');
 const Review = require('../models/Review');
 const Product = require('../models/Product');
 
+
 module.exports = {
+
   createGet: (req, res, next) => {
     res.render('reviews/create', {
       user: res.locals.user,

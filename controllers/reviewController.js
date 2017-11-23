@@ -12,6 +12,8 @@ module.exports = {
       idProduct: req.params
     });
   },
+
+  // AQUI CAMBIAR EL TRUST LEVEL DEL USER
   createPost: (req, res, next) => {
     Product.find({_id: req.params.id}, (err, product) => {
       if (err) {

@@ -45,9 +45,10 @@
 <div class="container">
   <p>Location:</p>
   <div id="map"></div>
-</div>
 <br>
 <h5 class="center-align">Stuff I can share:</h5>
+<div class="row">
+  <div class="col s12 m4">
 <ul>
   <% products.forEach((product) => { %>
   <li>
@@ -64,6 +65,8 @@
           </li>
     <% }) %>
 </ul>
+  </div>
+</div>
 <h5 class="center-align">Reviews:</h5>
 <ul>
   <% reviews.forEach((review) => { %>
@@ -78,7 +81,7 @@
         </li>
 <% }) %>
 </ul>
-
+</div>
 <div class="container">
   <div class="center-btn">
     <a href="../../user/<%= user._id %>/editUser" class="btn btn-success grey"><span class="fa fa-sign-in"></span>EDIT PROFILE</a><br></br>

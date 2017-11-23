@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row">
   <h2 class="center-align">New Message</h2>
-  <form class="col s12" action="/message/new" method="post">
+  <form class="col s12" action="/message/<%= to %>/new" method="post">
     <div class="row">
       <div class="input-field col s12">
         <input id="to" type="text" class="validate" name="to" placeholder="To:" value="<%= user.username %>">

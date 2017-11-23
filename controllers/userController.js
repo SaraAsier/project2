@@ -36,8 +36,12 @@ module.exports = {
 
   editPost: (req, res, next) => {
     let updates = {
+      name: req.body.name,
+      lastname: req.body.lastname,
       username: req.body.username,
       email: req.body.email,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
       pic_path: `../uploads/${req.file.filename}`,
       pic_name: req.file.originalname
     };

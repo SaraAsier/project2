@@ -1,30 +1,24 @@
 <img class="responsive-img" src="/images/cabecera-mano2.jpg">
 
-<div class="container">
+
 <h2 class="center-align dark-grey-text"> <%= category %> </h2>
+<div class="container">
 
 
-
-
-
-
+  <% product.forEach((product) => { %>
 <div class="row">
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image" width= "100%" >
+        <img width= "100%" height= "200px"src="<%= product.pic_path %>">
 
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <% product.forEach((product) => { %>
+      </div>
+      <div class="card-content">
           <h4 class="card-title"><%= product.name %></h4>
-          <p><%= product.description %></p>
-          <p>Is available: <%= product.isAvailable %></p>
-          <a class="green-text" href="/user/profile/<%= product.creator._id%>"><b><%= product.creator.username %></b></a>
-          <% }) %>
-        </div>
+        <p> <%= product.description %> </p>
+        <a class="green-text" href="/user/profile/<%= product.creator._id%>"><b><%= product.creator.username %></b></a>
       </div>
     </div>
   </div>
-
 </div>
+  <% }) %>

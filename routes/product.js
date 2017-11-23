@@ -1,11 +1,19 @@
 const router = require('express').Router();
 const productController = require('../controllers/productController');
 const middle = require('../config/middlewares');
+const multer  = require('multer');
+const upload = multer({ dest: './public/uploads/' });
+
 
 router.get('/', productController.index);
 
 router.get('/create', middle.EnsureLoggedIn, productController.createGet);
+router.post('/create', upload.single('photo'), productController.createPost);
+
 router.post('/create', middle.EnsureLoggedIn, productController.createPost);
+router.get('/:category', middle.EnsureLoggedIn, productController.categories);
+
+
 
 router.get('/:category', middle.EnsureLoggedIn, productController.categories);
 

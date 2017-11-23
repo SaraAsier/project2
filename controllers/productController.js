@@ -1,5 +1,8 @@
 const Product = require('../models/Product');
 const TYPES = require('../models/Product-types');
+const multer  = require('multer');
+const upload = multer({ dest: './public/uploads/' });
+
 
 module.exports = {
   index: (req, res, next) => {
@@ -12,10 +15,12 @@ module.exports = {
     var str = req.params.category;
     var str2 = str.split('');
     var str3 = str2[0].toUpperCase() + str.substr(1);
-    console.log(str3);
     Product.find({category: str3})
+
       .populate('creator')
       .then(product => {
+        console.log("8=======D --- 3");
+
         console.log(product);
       res.render('products/productbycategory', {category: str3, product: product});
     })
@@ -28,15 +33,19 @@ module.exports = {
 
   createPost: (req, res, next) => {
     const newProduct = new Product({
-      name: req.body.title,
+      name: req.body.name,
       description: req.body.description,
-      category: req.body.price,
-      creator: req.body.city,
-      isAvaliable: false,
+      category: req.body.category,
+      creator: req.user._id,
+      // isAvaliable: req.body.category,
       photo: `../uploads/${req.file.filename}`
     });
     newProduct.save()
-      .then(() => res.redirect("/product"))
+      .then(result => {
+        console.log("8=======D --- 3");
+        console.log(result);
+        res.redirect("/product");
+      })
       .catch(err => res.redirect("/product/create"));
   },
 

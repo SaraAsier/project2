@@ -42,7 +42,7 @@ module.exports = {
     });
     newProduct.save()
       .then(result => {
-        console.log("8=======D --- 3");
+        console.log("<3");
         console.log(result);
         res.redirect("/product");
       })
@@ -51,7 +51,7 @@ module.exports = {
 
   delete: (req, res, next) => {
     Product.findByIdAndRemove(req.params.id)
-      .then(obj => res.redirect("/product"))
+      .then(obj => res.redirect("/user/profile"))
       .catch(err => console.log(err));
   },
 

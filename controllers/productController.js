@@ -33,7 +33,7 @@ module.exports = {
 
   createPost: (req, res, next) => {
     const newProduct = new Product({
-      name: req.body.title,
+      name: req.body.name,
       description: req.body.description,
       category: req.body.category,
       creator: req.user._id,

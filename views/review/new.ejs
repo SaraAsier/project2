@@ -1,16 +1,16 @@
 <img class="responsive-img" src="/images/cabecera-mano2.jpg" width="100%">
 <div class="container">
 <div class="row">
-  <h2 class="center-align">New Message</h2>
-  <form class="col s12" action="/message/<%= to %>/new" method="post">
+  <h2 class="center-align">New Review</h2>
+  <form class="col s12" action="/review/<%= to %>/new" method="post">
     <div class="row">
       <div class="input-field col s12">
-        <input id="to" type="text" class="validate" name="to" placeholder="To:" value="<%= user.username %>">
+        <input id="to" type="number" class="validate" name="rating" placeholder="Rate from 1 to 5">
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <textarea id="text" type="textarea" class="validate" name="text" placeholder="Message"></textarea>
+        <textarea id="text" type="textarea" class="validate" name="text" placeholder="Review"></textarea>
       </div>
     </div>
     <div class="center-btn">

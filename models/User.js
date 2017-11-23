@@ -31,9 +31,7 @@ const userSchema = new Schema({
   pic_name: String,
 
   trustLevel:{
-    type: Number,
-    min: 0,
-    max: 5
+    type: Number
   },
 }, {
   timestamps: {

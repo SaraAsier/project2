@@ -2,11 +2,8 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const reviewSchema = new Schema({
-  receiverId: { type: Schema.Types.ObjectId, ref: 'User' },
-  description: {
-    type: String,
-    required: false
-  },
+  to: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+  text : String,
   rating: {
     type: Number,
     required: true

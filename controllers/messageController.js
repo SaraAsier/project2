@@ -19,9 +19,10 @@ module.exports = {
   newMessagePost: (req, res, next) => {
       const newMessage = new Message({
         from: req.user._id,
-        to: req.body.to,
+        to: req.params.id,
         text: req.body.text,
       });
+      console.log(newMessage);
       newMessage.save()
         .then(() => res.redirect("/message"))
         .catch(err => res.redirect("/message/newMessage"));

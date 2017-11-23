@@ -3,7 +3,7 @@
   <h3 class=" fa fa-user center-align"> <%= user.name %>´s profile</h3><br>
   <ul class="collection">
     <li class="collection-item avatar">
-      <img class="profilePicture" src="<%= user.pic_path %>" alt="<%= user.pic_name %>">
+      <img class="profilePicture" src="<%= user.photo %>" alt="<%= user.pic_name %>">
     </li>
     <li class="collection-item avatar">
       <p>Email: <br>
@@ -46,14 +46,20 @@
     <div class="center-btn">
       <a href="/message/<%= user._id %>/new" class="btn btn-success grey"><span class="fa fa-sign-in"></span>NEW MESSAGE</a><br></br>
     </div>
+    <div class="center-btn">
+      <a href="/review/<%= user._id %>/new" class="btn btn-success grey"><span class="fa fa-sign-in"></span>REVIEW</a><br></br>
+    </div>
   <p>Location:</p>
   <div id="map"></div>
   <br>
   <h5 class="center-align">Stuff I can share:</h5>
 
   <h5 class="center-align">Reviews:</h5>
-  <div class="btn">
-
+  <div class="container">
+      <% reviews.forEach((review) => { %>
+        <h4> <%= review.text %> </h4>
+        <h4> <%= review.rating %> </h4>
+      <% }) %>
   </div>
 </div>
 

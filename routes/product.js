@@ -15,6 +15,8 @@ router.get('/:category', middle.EnsureLoggedIn, productController.categories);
 
 
 
+router.get('/:category', middle.EnsureLoggedIn, productController.categories);
+
 // router.get('/:id/detail', middle.EnsureLoggedIn, productController.detail);
 
 router.get('/:id/delete', middle.EnsureLoggedIn, productController.delete);

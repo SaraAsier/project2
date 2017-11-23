@@ -4,7 +4,7 @@ const middle = require('../config/middlewares');
 
 router.get('/', middle.EnsureLoggedIn, messageController.messageGet);
 
-router.get('/new', middle.EnsureLoggedIn, messageController.newMessageGet);
-router.post('/new', middle.EnsureLoggedIn, messageController.newMessagePost);
+router.get('/:id/new', middle.EnsureLoggedIn, messageController.newMessageGet);
+router.post('/:id/new', middle.EnsureLoggedIn, messageController.newMessagePost);
 
 module.exports = router;

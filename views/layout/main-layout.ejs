@@ -4,33 +4,33 @@
     <title>
       LET IT FLOW
     </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
     <script src="/vendor/jquery/jquery.min.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='/vendor/materialize/css/materialize.css'>
+    <script src="/vendor/materialize/js/materialize.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
     <link rel="shortcut icon" href="images/favicon.png" />
   </head>
   <body>
   <% if(user) { %>
-      <nav class="white" role="navigation">
+      <nav class="grey darken-2" role="navigation">
         <div class="nav-wrapper container">
-          <a id="logo-container" href="/" class="brand-logo teal-text">LET IT FLOW</a>
+          <img src="../images/letitflow-logo3.png" id="logo-container" href="/" class="brand-logo center-align white-text">
           <ul class="right hide-on-med-and-down">
-            <li><a class="waves-effect waves-light btn" href="/auth/logout">Log out</a></li>
+            <li><a class="waves-effect grey btn" href="/auth/logout">Log out</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/user/profile">My profile</a></li>
+            <li><a class="white-text" href="/user/profile">My profile</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/message">My messages</a></li>
+            <li><a class="white-text" href="/message">My messages</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/product">Categories</a></li>
+            <li><a class="white-text" href="/product">Categories</a></li>
           </ul>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
+            <li><a class="white-text" href="/">Home</a></li>
           </ul>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="side-nav">
@@ -42,11 +42,11 @@
                   </div>
                 </nav>
             <% } else { %>
-                <nav class="white" role="navigation">
+                <nav class="grey darken-2" role="navigation">
                   <div class="nav-wrapper container">
-                    <a id="logo-container" href="/" class="brand-logo teal-text">LET IT FLOW</a>
+                    <a id="logo-container" href="/" class="brand-logo white-text">LET IT FLOW</a>
                     <ul class="right hide-on-med-and-down">
-                      <li><a class="waves-effect waves-light btn" href="/auth/signup">Sign Up</a></li>
+                      <li><a class="waves-effect grey btn" href="/auth/signup">Sign Up</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
                       <li><a href="/auth/login">Log in</a></li>
@@ -61,9 +61,4 @@
           <% } %>
             <%- body -%>
             </body>
-
                 </html>
-                <!--  Scripts-->
-                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-                <script src="javascript/materialize.js"></script>
-                <script src="javascript/init.js"></script>

@@ -3,6 +3,7 @@ nav .brand-logo {
   color: Black;
 }
 
+
 p {
   line-height: 2rem;
 }
@@ -12,9 +13,9 @@ p {
 }
 
 .profilePicture{
-  width: 100px;
-  height: 100px;
-  
+  width: 300px;
+  height: 300px;
+
 }
 
 .button-collapse {

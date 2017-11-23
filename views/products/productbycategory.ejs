@@ -1,12 +1,31 @@
-<h2 class="center-align teal-text"> <%= category %> </h2>
+<img class="responsive-img" src="../images/cabecera-mano2.jpg">
+
+<div class="container">
+<h2 class="center-align dark-grey-text"> <%= category %> </h2>
 
 
 
-<ul>
-  <% product.forEach((product) => { %>
-  <li><h5><%= product.name %></h5></li>
-  <li>Product description: <%= product.description %>=</li>
-  <li>Is available: <%= product.isAvailable %></li>
-  <li><a href="/user/profile/<%= product.creator._id%>"><b><%= product.creator.username %></b></a></li>
-  <% }) %>
-</ul>
+
+
+
+<div class="row">
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <img src="images/sample-1.jpg">
+
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <% product.forEach((product) => { %>
+          <h4 class="card-title"><%= product.name %></h4>
+          <p><%= product.description %></p>
+          <p>Is available: <%= product.isAvailable %></p>
+          <a class="green-text" href="/user/profile/<%= product.creator._id%>"><b><%= product.creator.username %></b></a>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

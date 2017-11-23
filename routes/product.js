@@ -4,10 +4,10 @@ const middle = require('../config/middlewares');
 
 router.get('/', productController.index);
 
-router.get('/:category', middle.EnsureLoggedIn, productController.categories);
-
 router.get('/create', middle.EnsureLoggedIn, productController.createGet);
 router.post('/create', middle.EnsureLoggedIn, productController.createPost);
+
+router.get('/:category', middle.EnsureLoggedIn, productController.categories);
 
 // router.get('/:id/detail', middle.EnsureLoggedIn, productController.detail);
 

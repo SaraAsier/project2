@@ -1,7 +1,8 @@
+<img class="responsive-img" src="/images/cabecera-mano2.jpg" width="100%">
 <div class="container">
-  <h1 class=" fa fa-user center-align">Edit profile</h1><br>
+  <h2 class=" fa fa-user center-align">Edit profile</h2><br>
 
-  <!-- FALTA LOCALIZACION -->
+
 
   <form action="/user/<%= user._id %>/editUser" method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -20,8 +21,12 @@
       <label>Email</label>
       <input type="text" class="form-control" name="email" value="<%= user.email %>">
     </div>
-    <div class="col-sm-4">
+    <div class="form-group">
+      <label>Enter a location:</label>
+      <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+    </div>
 
+    <div class="col-sm-4">
       <div class="file-field input-field">
         <div class="btn">
           <span>Select a profile picture</span>
@@ -33,79 +38,20 @@
       </div>
     </div>
 
-    <div>
-      <div id="floating-panel">
-        <input id="latlng" type="hidden" value="<%= user.latitude %>, <%= user.longitude %>">
-        <input id="submit" type="button" class="btn" value="See current address">
-      </div>
-      <br>
-
       <div id="map"></div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
-        </div>
-      </div>
       <br>
-
-      <input id="latitude" name="latitude" type="hidden">
-      <input id="longitude" name="longitude" type="hidden">
       <div class="center-btn">
-        <button class="btn waves-effect waves-light" type="submit" name="action" value="Submit">Update
-                </button>
+        <button class="btn waves-effect waves-light right" type="submit" name="action" value="Submit">Submit
+          <i class="material-icons right">send</i>
+        </button>
         <br></br>
       </div>
-    </div>
-  </form>
-</div>
-</div>
-</div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApXzFjm59CO5m3ox-cr3w3AiiVnsBHzfQ&libraries=places"></script>
-<script type="text/javascript" src="/javascripts/mapDrawAll.js"></script>
-<script>
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
-      center: {
-        lat: 40.731,
-        lng: -73.997
-      }
-    });
-    var geocoder = new google.maps.Geocoder;
-    var infowindow = new google.maps.InfoWindow;
 
-    document.getElementById('submit').addEventListener('click', function() {
-      geocodeLatLng(geocoder, map, infowindow);
-    });
-  }
+      <input id="latitude" name="latitude" type="text">
+      <input id="longitude" name="longitude" type="text">
+    </form>
+  </div>
 
-  function geocodeLatLng(geocoder, map, infowindow) {
-    var input = document.getElementById('latlng').value;
-    var latlngStr = input.split(',', 2);
-    var latlng = {
-      lat: parseFloat(latlngStr[0]),
-      lng: parseFloat(latlngStr[1])
-    };
-    geocoder.geocode({
-      'location': latlng
-    }, function(results, status) {
-      if (status === 'OK') {
-        if (results[1]) {
-          map.setZoom(11);
-          var marker = new google.maps.Marker({
-            position: latlng,
-            map: map
-          });
-          infowindow.setContent(results[1].formatted_address);
-          infowindow.open(map, marker);
-        } else {
-          window.alert('No results found');
-        }
-      } else {
-        window.alert('Geocoder failed due to: ' + status);
-      }
-    });
-  }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApXzFjm59CO5m3ox-cr3w3AiiVnsBHzfQ&callback=initMap">
-</script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApXzFjm59CO5m3ox-cr3w3AiiVnsBHzfQ&libraries=places"></script>
+  <script type="text/javascript" src="/javascripts/mapDrawAll.js"></script>

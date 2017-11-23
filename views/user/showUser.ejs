@@ -1,5 +1,6 @@
+<img class="responsive-img" src="/images/cabecera-mano2.jpg" width="100%">
 <div class="container">
-  <h3 class=" fa fa-user center-align teal-text"> <%= user.name %>´s profile</h3><br>
+  <h3 class=" fa fa-user center-align"> <%= user.name %>´s profile</h3><br>
   <ul class="collection">
     <li class="collection-item avatar">
       <img class="profilePicture" src="<%= user.pic_path %>" alt="<%= user.pic_name %>">
@@ -42,13 +43,17 @@
   </ul>
 </div>
 <div class="container">
+    <div class="center-btn">
+      <a href="/message/<%= user._id %>/new" class="btn btn-success grey"><span class="fa fa-sign-in"></span>NEW MESSAGE</a><br></br>
+    </div>
   <p>Location:</p>
   <div id="map"></div>
-</div>
-<br>
-<h5 class="teal-text center-align">Stuff I can share:</h5>
+  <br>
+  <h5 class="center-align">Stuff I can share:</h5>
 
-<h5 class="teal-text center-align">Reviews:</h5>
+  <h5 class="center-align">Reviews:</h5>
+</div>
+
 <script type="text/javascript">
 var myUser = <%- JSON.stringify(user) %>;
 </script>

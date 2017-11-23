@@ -1,6 +1,6 @@
-
+<img class="responsive-img" src="/images/cabecera-mano2.jpg" width="100%">
 <div class="container">
-  <h3 class=" fa fa-user center-align teal-text"> My profile</h3><br>
+  <h3 class=" fa fa-user center-align"> My profile</h3><br>
   <ul class="collection">
     <li class="collection-item avatar">
       <img class="profilePicture" src="<%= user.pic_path %>" alt="<%= user.pic_name %>">
@@ -47,7 +47,7 @@
   <div id="map"></div>
 </div>
 <br>
-<h5 class="teal-text center-align">Stuff I can share:</h5>
+<h5 class="center-align">Stuff I can share:</h5>
 <ul>
   <% products.forEach((product) => { %>
   <li>
@@ -64,7 +64,7 @@
           </li>
     <% }) %>
 </ul>
-<h5 class="teal-text center-align">Reviews:</h5>
+<h5 class="center-align">Reviews:</h5>
 <ul>
   <% reviews.forEach((review) => { %>
   <li>
@@ -81,7 +81,7 @@
 
 <div class="container">
   <div class="center-btn">
-    <a href="../../user/<%= user._id %>/editUser" class="btn btn-success"><span class="fa fa-sign-in"></span>EDIT PROFILE</a><br></br>
+    <a href="../../user/<%= user._id %>/editUser" class="btn btn-success grey"><span class="fa fa-sign-in"></span>EDIT PROFILE</a><br></br>
   </div>
 </div>
 

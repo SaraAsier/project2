@@ -20,9 +20,7 @@ module.exports = {
         console.log(err);
       }
       let newReview = new Review({
-        senderId: res.locals.user._id,
-        //creator iD???? array campaign??
-        // receiverId: campaign[0].refCreatorId,
+        receiverId: campaign[0].refCreatorId,
         description: req.body.description,
         rating: req.body.rating,
       });

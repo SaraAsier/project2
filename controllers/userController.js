@@ -6,10 +6,17 @@ const Product = require('../models/Product');
 module.exports = {
 
   profileIdGet: (req, res, next) => {
+    var count = 0;
       User.findById(req.params.id)
       .then(result1 => {
         Review.find({receiverId: result1._id})
           .then(result2 => {
+            result2.forEach(e){
+              e.rating
+            }
+            result1.trustLevel = 
+            //forEach recorrer reviews y guardar en un contador los valores de cada review con un +=
+            //
               Product.find({creator:result1._id})
                 .then( result3 => res.render('user/showUser', { user: result1, reviews: result2, products: result3 }));
       });

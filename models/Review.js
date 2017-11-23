@@ -2,17 +2,13 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const reviewSchema = new Schema({
-  senderId: String,
-  senderName: String,
   receiverId: { type: Schema.Types.ObjectId, ref: 'User' },
   description: {
     type: String,
-    required: true
+    required: false
   },
   rating: {
     type: Number,
-    min: 0,
-    max: 5,
     required: true
     },
   }, {

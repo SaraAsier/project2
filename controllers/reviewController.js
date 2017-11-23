@@ -6,42 +6,23 @@ const Product = require('../models/Product');
 
 module.exports = {
 
-  createGet: (req, res, next) => {
-    res.render('reviews/create', {
-      user: res.locals.user,
-      idProduct: req.params
-    });
-  },
+  newReviewGet: (req, res, next) => {
+    console.log("8=======D ----- 3  ");
+    console.log(req.params.id);
+    User.findById(req.params.id)
+    .then(result => res.render('review/new', { to:req.params.id, user: result}))
+    .catch( err => console.log (err));
+    },
 
-  // AQUI CAMBIAR EL TRUST LEVEL DEL USER
-  createPost: (req, res, next) => {
-    Product.find({_id: req.params.id}, (err, product) => {
-      if (err) {
-        console.log(err);
-      }
-      let newReview = new Review({
-        senderId: res.locals.user._id,
-        //creator iD???? array campaign??
-        // receiverId: campaign[0].refCreatorId,
-        description: req.body.description,
-        rating: req.body.rating,
+  newReviewPost: (req, res, next) => {
+      const newReview = new Review({
+        to: req.params.id,
+        text: req.body.text,
+        rating: req.body.rating
       });
+      console.log(newReview);
       newReview.save()
-      .then((result, err) => {
-        //redirigimos a user mejor?
-        res.redirect(`../../product/${req.params.id}/detail`);
-      })
-      .catch(error => next(error));
-    });
-  },
-
-  delete: (req, res, next) => {
-    Review.findByIdAndRemove(req.params.id, (err, obj) => {
-      if (err) {
-        return next(err);
-      }
-      //cambiar redirect
-      res.redirect("/product");
-    });
-  }
+        .then(() => res.redirect("/user/showUser"))
+        .catch(err => res.redirect("/products/indexcategories"));
+    },
 };

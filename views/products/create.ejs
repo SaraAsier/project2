@@ -1,31 +1,41 @@
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+<style type="text/css">
+label {
+  font-size: 18px;
+};
+</style>
+
 <img class="responsive-img" src="/images/cabecera-mano2.jpg" width="100%">
 <div class="container">
-<form id="form" action="/product/create" method="POST" enctype="multipart/form-data">
-  <label>Name</label><br>
-  <input type="text" name="name" placeholder="Name">
-  <br><br>
-  <label>Description</label><br>
-  <input type="text" name="description" placeholder="Description">
-  <br><br>
-  <label>Category</label><br>
-  <input type="text" name="category" placeholder="Category">
-
-  <br><br>
-  <input type="file" name="photo">
-  <div class="container">
-  <div class="center-btn right">
-    <button class="btn waves-effect waves-light" type="submit" name="action">Share
+  <h2 class="center-align dark-grey-text">What would you like to share?</h2>
+  <form id="form" action="/product/create" method="POST" enctype="multipart/form-data">
+    <label>Name</label><br>
+    <input type="text" name="name" placeholder="">
+    <br><br>
+    <label>Description</label><br>
+    <input type="text" name="description" placeholder="">
+    <br><br>
+    <label>Category</label><br>
+    <input type="text" name="category" placeholder="">
+    <br>
+    <label>A picture always helps</label><br>
+      <br>
+    <!-- <input type="file" name="photo"> -->
+    <label class="btn btn-default btn-file grey darken-2">
+    Browse <input name="photo" type="file" style="display: none;">
+</label>
+<br><br>
+      <div class="center-btn right">
+        <button class="btn waves-effect light-green" type="submit" name="action">Share
    <i class="material-icons right">send</i></button>
-   <br>
-  </div>
+        <br>
+          <br>
+            <br>
+      </div>
+    <br></br>
+  </form>
 </div>
-  <br></br>
-</form>
-</div>
-
-<script type="text/javascript">
-$(document).ready(function() {
- $('select').material_select();
-});
-
-</script>

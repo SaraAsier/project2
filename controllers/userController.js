@@ -33,7 +33,7 @@ module.exports = {
   },
 
   profileGet: (req, res, next) => {
-    Review.find({receiverId: res.locals.user._id})
+    Review.find({to: res.locals.user._id})
       .then(reviews => {
         Product.find({creator:res.locals.user._id})
           .then( products => res.render('user/profile', { user: res.locals.user, reviews: reviews, products: products }));

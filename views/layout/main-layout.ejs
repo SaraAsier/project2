@@ -4,13 +4,11 @@
     <title>
       LET IT FLOW
     </title>
-    <link rel='stylesheet' href='/stylesheets/style.css'>
-    <script src="/vendor/jquery/jquery.min.js" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet' href='/vendor/materialize/css/materialize.css'>
-    <script src="/vendor/materialize/js/materialize.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="shortcut icon" href="/images/superfavicon.ico" />
   </head>
   <body>
   <% if(user) { %>
@@ -32,12 +30,13 @@
           <ul class="right hide-on-med-and-down">
             <li><a class="white-text" href="/">Home</a></li>
           </ul>
-          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul id="nav-mobile" class="side-nav">
-                      <li><a href="/product">Categories<i class="material-icons">event_available</i></a></li>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="mobile-demo" class="side-nav">
                       <li><a href="/">Home<i class="material-icons">home</i></a></li>
-                      <li><a href="/user/profile">Profile<i class="material-icons">person</i></a></li>
-                      <li><a class="waves-effect waves-light btn" href="/auth/logout">Log out</a></li>
+                      <li><a href="/product">Categories<i class="material-icons">event_available</i></a></li>
+                      <li><a href="/message">My messages<i class="material-icons">mail</i></a></li>
+                      <li><a href="/user/profile">My profile<i class="material-icons">person</i></a></li>
+                      <li><a class="waves-effect light-green btn" href="/auth/logout">Log out</a></li>
                     </ul>
                   </div>
                 </nav>
@@ -49,13 +48,13 @@
                       <li><a class="waves-effect grey btn" href="/auth/signup">Sign Up</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down">
-                      <li><a href="/auth/login">Log in</a></li>
+                      <li><a class="white-text" href="/auth/login">Log in</a></li>
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
                       <li><a href="/auth/login">Log in</a></li>
-                      <li><a class="waves-effect waves-light btn" href="/auth/signup">Sign Up</a></li>
+                      <li><a class="waves-effect light-green btn" href="/auth/signup">Sign Up</a></li>
                     </ul>
-                    <a href="/auth/login" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                   </div>
                 </nav>
           <% } %>
@@ -83,5 +82,8 @@
           </div>
         </footer>
             </body>
+            <script src="/vendor/jquery/jquery.js" charset="utf-8"></script>
+            <script src="/vendor/materialize/js/materialize.js"></script>
 
+            <script type="text/javascript" src= "/javascripts/main.js"></script>
                 </html>

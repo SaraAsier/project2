@@ -3,7 +3,9 @@
 <h2 class="center-align">Join</h2>
 
   <form class="col s12" action="/auth/signup" method="post" enctype="multipart/form-data">
-      <input type="file" name="photo">
+    <label class="btn btn-default btn-file grey darken-2">
+  Select your profile picture <input name="photo" type="file" style="display: none;">
+</label>
     <div class="row">
       <div class="input-field col s12">
         <input id="name" type="text" class="validate" name="name" placeholder="Name">
@@ -44,14 +46,15 @@
     <div id="map"></div>
     <br>
     <div class="center-btn">
-      <button class="btn waves-effect waves-light right" type="submit" name="action" value="Submit">Submit
+      <button class="btn waves-effect light-green right" type="submit" name="action" value="Submit">Submit
         <i class="material-icons right">send</i>
       </button>
+      <br>
       <br></br>
     </div>
 
-    <input id="latitude" name="latitude" type="text">
-    <input id="longitude" name="longitude" type="text">
+    <input id="latitude" name="latitude" type="hidden">
+    <input id="longitude" name="longitude" type="hidden">
   </form>
 </div>
 

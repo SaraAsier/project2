@@ -4,6 +4,7 @@ const User = require('../models/User');
 module.exports = {
   messageGet: (req, res, next) => {
     Message.find({to:req.user._id})
+      .populate('from')
       .then(result => res.render('message/message', { message: result }))
       .catch( err => console.log (err));
   },

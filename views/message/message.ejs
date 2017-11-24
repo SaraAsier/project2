@@ -6,7 +6,7 @@
   <li class="collection-item avatar">
   <% message.forEach((message) => { %>
   <i class="material-icons">email_outline</i>
-  <h5>From: <%= user.username %></h5>
+  <h5>From: <%= message.from.username %></h5>
   <p>Message: <%= message.text %></p>
   <br>
   <% }) %>

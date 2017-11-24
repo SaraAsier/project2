@@ -7,6 +7,7 @@ module.exports = {
 
   profileIdGet: (req, res, next) => {
     var contador = 0;
+    let sumrating = 0;
       User.findById(req.params.id)
       .then(result1 => {
         Review.find({to: result1._id})
@@ -15,7 +16,7 @@ module.exports = {
             result2.forEach( e => {
               console.log("LONGITUD", result2.length);
               console.log("RATING INDIVIDUAL", e.rating);
-              let sumrating = 0;
+
               sumrating += e.rating;
               console.log("SUMA", sumrating);
               contador = sumrating / result2.length;

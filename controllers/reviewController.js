@@ -22,7 +22,7 @@ module.exports = {
       });
       console.log(newReview);
       newReview.save()
-        .then(() => res.redirect("/user/showUser"))
+        .then(() => res.redirect("/user/profile"))
         .catch(err => res.redirect("/products/indexcategories"));
     },
 };

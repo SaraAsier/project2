@@ -16,7 +16,7 @@
   <% if(user) { %>
       <nav class="grey darken-2" role="navigation">
         <div class="nav-wrapper container">
-          <img src="/images/letitflow-logo3.png" id="logo-container" href="/" class="brand-logo center-align white-text">
+          <a href="/" class="brand-logo center-align white-text"><img src="/images/letitflow-logo3.png" id="logo-container"></a>
           <ul class="right hide-on-med-and-down">
             <li><a class="waves-effect grey btn" href="/auth/logout">Log out</a></li>
           </ul>
@@ -44,7 +44,7 @@
             <% } else { %>
                 <nav class="grey darken-2" role="navigation">
                   <div class="nav-wrapper container">
-                    <img src="/images/letitflow-logo3.png" id="logo-container" href="/" class="brand-logo center-align white-text">
+                    <a href="/" class="brand-logo center-align white-text"><img src="/images/letitflow-logo3.png" id="logo-container"></a>
                     <ul class="right hide-on-med-and-down">
                       <li><a class="waves-effect grey btn" href="/auth/signup">Sign Up</a></li>
                     </ul>
@@ -55,10 +55,33 @@
                       <li><a href="/auth/login">Log in</a></li>
                       <li><a class="waves-effect waves-light btn" href="/auth/signup">Sign Up</a></li>
                     </ul>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a href="/auth/login" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                   </div>
                 </nav>
           <% } %>
             <%- body -%>
+            <footer class="page-footer light-green">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <a href="/" class="brand-logo center-align white-text"><img src="/images/letitflow-logo3.png" id="logo-container"></a>
+                <p class="grey-text text-lighten-4">There's green between so much grey.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Autores</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/saramozaffaryaliste/">Sara Mozaffary</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/asiercisnerosgarcia/">Asier Cisneros</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright Let it flow
+            </div>
+          </div>
+        </footer>
             </body>
+
                 </html>

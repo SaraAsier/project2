@@ -38,7 +38,7 @@ module.exports = {
       category: req.body.category,
       creator: req.user._id,
       // isAvaliable: req.body.category,
-      photo: `../uploads/${req.file.filename}`
+      photo: `/uploads/${req.file.filename}`
     });
     newProduct.save()
       .then(result => {

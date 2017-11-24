@@ -6,7 +6,7 @@ const Product = require('../models/Product');
 module.exports = {
 
   profileIdGet: (req, res, next) => {
-    var contador = 0;
+    let contador = 0;
     let sumrating = 0;
       User.findById(req.params.id)
       .then(result1 => {
@@ -33,10 +33,23 @@ module.exports = {
   },
 
   profileGet: (req, res, next) => {
+    let contador = 0;
+    let sumrating = 0;
     Review.find({to: res.locals.user._id})
-      .then(reviews => {
+      .then(result2 => {
+        console.log("RESULT", result2);
+        result2.forEach( e => {
+          console.log("LONGITUD", result2.length);
+          console.log("RATING INDIVIDUAL", e.rating);
+
+          sumrating += e.rating;
+          console.log("SUMA", sumrating);
+          contador = sumrating / result2.length;
+          console.log("CONTADOR", contador);
+          res.locals.user.trustLevel = contador;
+        });
         Product.find({creator:res.locals.user._id})
-          .then( products => res.render('user/profile', { user: res.locals.user, reviews: reviews, products: products }));
+          .then( products => res.render('user/profile', { user: res.locals.user, reviews: result2, products: products }));
       })
       .catch(err => console.log(err));
   },
@@ -55,7 +68,7 @@ module.exports = {
       email: req.body.email,
       latitude: req.body.latitude,
       longitude: req.body.longitude,
-      pic_path: `../uploads/${req.file.filename}`,
+      pic_path: `/uploads/${req.file.filename}`,
       pic_name: req.file.originalname
     };
     User.findByIdAndUpdate(req.params.id, updates)
